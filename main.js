@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkbox[3].checked) alfabeto += simbolos;
 
         const entropia = tamanhoSenha * Math.log2(alfabeto.length);
-        valorEntropia.textContent = `Entropia: ${Math.round(entropia)} bits`;
+        valorEntropia.textContent = "Um computador pode levar até " + Math.floor(2**entropia/(100e6*60*60*24)) + " dias para descobrir essa senha.";
         console.log(entropia);
         forcaSenha.classList.remove('fraca', 'media', 'forte');
         if (entropia > 57) {
